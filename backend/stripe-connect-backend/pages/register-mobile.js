@@ -11,7 +11,8 @@ export default function RegisterMobile() {
   const redirectToApp = () => {
     const { account_id } = query
     window.open(
-      `${APP_SCHEME}://deeplinks/register-success?account_id=${account_id}`
+      `${APP_SCHEME}:
+//      deeplinks/register-success?account_id=${account_id}`
     )
   }
 

@@ -20,9 +20,13 @@ const stripeAccount = async (req, res) => {
     })
     if (mobile) {
       // In case of request generated from the flutter app, return a json response
+
+      console.log("here")
       res.status(200).json({ success: true, url: accountLinks.url })
+
     } else {
       // In case of request generated from the web app, redirect
+      console.log("here2")
       res.redirect(accountLinks.url)
     }
   } else if (method === "DELETE") {
