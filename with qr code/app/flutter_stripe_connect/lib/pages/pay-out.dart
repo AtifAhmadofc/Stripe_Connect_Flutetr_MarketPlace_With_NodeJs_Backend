@@ -42,12 +42,12 @@ class _PayOutState extends State<PayOut> {
   List<Product> products = [
     new Product(
         title: 'Beats X',
-        price: 15,
+        price: 100,
         currency: 'usd',
         image: Image(image: AssetImage('assets/beats-x.png'))),
     new Product(
         title: 'Arctis Pro Wireless',
-        price: 10,
+        price: 200,
         currency: 'usd',
         image: Image(image: AssetImage('assets/arctis-pro-wireless.png')))
   ];
@@ -96,24 +96,24 @@ class _PayOutState extends State<PayOut> {
       Future.delayed(Duration(milliseconds: 300), () {
         Navigator.of(context).push(MaterialPageRoute(
           builder: (_) => CheckoutPage(sessionId: sessionId),
-        ));
-        //     .then((value) {
-        //   if (value == 'success') {
-        //     ScaffoldMessenger.of(context).showSnackBar(
-        //         new SnackBar(
-        //           content: Text('Payment Successful'),
-        //           backgroundColor: Colors.green,
-        //         )
-        //     );
-        //   } else if (value == 'cancel') {
-        //     ScaffoldMessenger.of(context).showSnackBar(
-        //         new SnackBar(
-        //           content: Text('Payment Failed or Cancelled'),
-        //           backgroundColor: Colors.red
-        //         )
-        //     );
-        //   }
-        // });
+        ))
+            .then((value) {
+          if (value == 'success') {
+            ScaffoldMessenger.of(context).showSnackBar(
+                new SnackBar(
+                  content: Text('Payment Successful'),
+                  backgroundColor: Colors.green,
+                )
+            );
+          } else if (value == 'cancel') {
+            ScaffoldMessenger.of(context).showSnackBar(
+                new SnackBar(
+                  content: Text('Payment Failed or Cancelled'),
+                  backgroundColor: Colors.red
+                )
+            );
+          }
+        });
       });
     } catch (e) {
       log(e.toString());

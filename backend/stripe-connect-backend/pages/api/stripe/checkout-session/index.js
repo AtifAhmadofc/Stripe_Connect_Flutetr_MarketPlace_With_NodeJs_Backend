@@ -15,6 +15,8 @@ const checkoutSession = async (req, res) => {
     quantity,
     mobile,
   } = req.query
+
+  console.log((amount*(appFee/100)));
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     line_items: [
@@ -34,7 +36,7 @@ const checkoutSession = async (req, res) => {
        * Multiplying by 100 because otherwise for example,
        * 149 becomes 1.49 on Stripe
        */
-      application_fee_amount: appFee * 100,
+      application_fee_amount: (amount*(appFee/100)) * 100,
       transfer_data: {
         destination: accountId,
       },

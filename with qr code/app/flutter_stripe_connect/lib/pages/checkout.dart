@@ -5,7 +5,6 @@ import '../constants.dart';
 
 String checkoutSuccessUrl = '$BACKEND_HOST/pay-out-mobile?result=success';
 String checkoutFailureUrl = '$BACKEND_HOST/pay-out-mobile?result=failure';
-String stripePublicKey = 'pk_test_51Kq1flDoMa06ywt0dBpBSXdUGtGXy1to7FEDfEQY9ApFb6DF58xVwe3Jj5WwURoJWn6ahbDi6wmhorVmcg0fOPWH0005J8RvzO';
 
 const stripeHtmlPageScaffold = '''
   <!DOCTYPE html>
