@@ -11,7 +11,7 @@ Open flutter app project
 Update keys
 Update schema in android menifiest
 Run project
-Run "add reverse tcp:3000 tcp:3000" (only for android for iOS use device IP address instead of localhost)
+Run "adb reverse tcp:3000 tcp:3000" (only for android for iOS use device IP address instead of localhost)
 
 
 After seller registration run this in terminal 
